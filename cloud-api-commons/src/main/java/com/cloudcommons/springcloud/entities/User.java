@@ -3,20 +3,22 @@ package com.cloudcommons.springcloud.entities;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Timestamp;
-
 @Data
 @NoArgsConstructor
 public class User {
     private Long id;
     private String username;
     private String password;
-    private String nickname;
-
-    private Integer enabled;
-
     private String email;
 
-    private String userface;
-    private Timestamp regTime;
+    public User(String username,String password){
+        this.username = username;
+        this.password = password;
+    }
+    public User(Long id,String username,String password){
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
+
 }
